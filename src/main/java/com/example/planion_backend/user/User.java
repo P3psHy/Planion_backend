@@ -4,11 +4,17 @@ package com.example.planion_backend.user;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
+import com.example.planion_backend.company.Company;
+
 @Entity
-public class users {
+@Table(name = "users")
+public class User {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +27,11 @@ public class users {
     @Column(nullable = false, unique = true)
     private String mail;
     private String password;
+
+    // Relations
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
 
     public Long getId() {
         return this.id;
