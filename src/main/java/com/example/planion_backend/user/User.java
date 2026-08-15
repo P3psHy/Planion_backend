@@ -5,6 +5,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -16,6 +18,7 @@ import java.util.List;
 import com.example.planion_backend.company.Company;
 import com.example.planion_backend.notification.Notification;
 import com.example.planion_backend.participant.Participant;
+import com.example.planion_backend.role.Role;
 
 @Entity
 @Table(name = "users")
@@ -44,8 +47,14 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Notification> notifications;
 
+    @ManyToMany
+    @JoinTable(
+        name = "user_roles",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private List<Role> roles;
 
-    
     public Long getId() {
         return this.id;
     }

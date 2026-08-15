@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
+import com.example.planion_backend.role.Role;
 import com.example.planion_backend.user.User;
 
 @Entity
@@ -25,6 +26,9 @@ public class Company {
     // Relations
     @OneToMany(mappedBy = "company")
     private List<User> users;
+
+    @OneToMany(mappedBy = "company")
+    private List<Role> roles;
 
     public Long getId() {
         return this.id;
