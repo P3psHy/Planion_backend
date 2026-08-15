@@ -14,6 +14,7 @@ import jakarta.persistence.GenerationType;
 import java.util.List;
 
 import com.example.planion_backend.company.Company;
+import com.example.planion_backend.notification.Notification;
 import com.example.planion_backend.participant.Participant;
 
 @Entity
@@ -40,6 +41,11 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Participant> participants;
 
+    @OneToMany(mappedBy = "user")
+    private List<Notification> notifications;
+
+
+    
     public Long getId() {
         return this.id;
     }

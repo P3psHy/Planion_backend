@@ -3,6 +3,7 @@ package com.example.planion_backend.meeting;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.example.planion_backend.notification.Notification;
 import com.example.planion_backend.participant.Participant;
 
 import jakarta.persistence.Entity;
@@ -30,6 +31,9 @@ public class Meeting {
 
     @OneToMany(mappedBy = "meeting")
     private List<Participant> participants;
+
+    @OneToMany(mappedBy = "meeting")
+    private List<Notification> notifications;
 
     public long getId() {
         return this.id;
