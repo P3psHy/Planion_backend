@@ -60,4 +60,20 @@ public class Participant {
     public void setRole(String role) {
         this.role = role;
     }
+
+    public Meeting getMeeting() {
+        return this.meeting;
+    }
+
+    public void setMeeting(Meeting meeting) {
+        this.meeting = meeting;
+    }
+
+    public User getUser() {
+        return this.user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
