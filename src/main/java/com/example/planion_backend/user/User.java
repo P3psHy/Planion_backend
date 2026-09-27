@@ -109,4 +109,10 @@ public class User {
         this.password = password;
     }
 
+    // Extra methods
+
+    public Company getCompany() {
+        return this.company;
+    }
+
 }
