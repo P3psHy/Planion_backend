@@ -2,6 +2,9 @@ package com.example.planion_backend.meeting;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class MeetingService {
     
     private final MeetingRepository meetingRepository;

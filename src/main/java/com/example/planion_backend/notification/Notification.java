@@ -66,5 +66,20 @@ public class Notification {
         this.sendedDate = sendedDate;
     }
 
+    public User getUser() {
+        return this.user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Meeting getMeeting() {
+        return this.meeting;
+    }
+
+    public void setMeeting(Meeting meeting) {
+        this.meeting = meeting;
+    }
 
 }
