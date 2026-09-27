@@ -109,10 +109,30 @@ public class User {
         this.password = password;
     }
 
-    // Extra methods
+    // External methods
 
     public Company getCompany() {
         return this.company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+    public List<Participant> getParticipants() {
+        return this.participants;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+
+    public void getRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+
+    public void addRole(Role role) {
+        this.roles.add(role);
     }
 
 }

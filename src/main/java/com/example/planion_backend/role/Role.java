@@ -1,6 +1,5 @@
 package com.example.planion_backend.role;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,11 +14,10 @@ import java.util.List;
 import com.example.planion_backend.company.Company;
 import com.example.planion_backend.user.User;
 
-
 @Entity
 @Table(name = "roles")
 public class Role {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -29,9 +27,7 @@ public class Role {
 
     // Relations
 
-    @ManyToMany(
-        mappedBy = "roles"
-    )
+    @ManyToMany(mappedBy = "roles")
     private List<User> users;
 
     @ManyToOne
@@ -70,7 +66,12 @@ public class Role {
         this.description = description;
     }
 
+    public Company getCompany() {
+        return this.company;
+    }
 
-
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 
 }
